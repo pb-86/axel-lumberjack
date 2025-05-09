@@ -1,0 +1,26 @@
+{% include "templates/header.twig" %}
+
+<main class="main" id="main" tabindex="-1">
+	<div class="wrapper">
+
+		{# Tytuł #}
+		{% include 'template-parts/shared/title.twig' %}
+
+		{% if search_query %}
+			{# Szukana fraza #}
+			<div class="search-query">
+				{{ __( 'Szukałeś: ', 'axel' ) }}
+				<strong>
+					{{ search_query }}
+				</strong>
+			</div>
+		{% endif %}
+
+		{# Skróty wpisów #}
+		{% include "template-parts/loops/loop-excerpt.twig" %}
+
+	</div>
+</main>
+
+{% include "templates/sidebar.twig" %}
+{% include "templates/footer.twig" %}

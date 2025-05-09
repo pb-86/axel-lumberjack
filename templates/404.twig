@@ -1,0 +1,23 @@
+{% include "templates/header.twig" %}
+
+<main class="main" id="main" tabindex="-1">
+	<div class="wrapper">
+
+		<article>
+			{% include "template-parts/shared/title.twig" %}
+
+			<div class="content error-message">
+				<p>
+					{{ __( 'Przepraszamy, ale nie znaleźliśmy strony, której szukasz.', 'axel' ) }}
+				</p>
+			</div>
+
+			<div class="post-meta post-meta--bottom">
+				{% include 'template-parts/shared/back-to-home.twig' %}
+			</div>
+		</article>
+
+	</div>
+</main>
+
+{% include "templates/footer.twig" %}

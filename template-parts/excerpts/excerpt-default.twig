@@ -1,0 +1,13 @@
+<article {{ function( 'post_class', 'excerpt' ) }} id="post-{{ function( 'get_the_ID' ) }}">
+
+	{% include 'template-parts/shared/thumbnail.twig' %}
+	{% include 'template-parts/shared/title-link.twig' %}
+
+	<div class="excerpt__meta">
+		{% include 'template-parts/shared/date.twig' %}
+		{% include 'template-parts/shared/author.twig' %}
+	</div>
+
+	{% include 'template-parts/shared/content-excerpt.twig' %}
+
+</article>

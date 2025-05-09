@@ -1,0 +1,22 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.footer {
+	&__credits {
+		& > .wrapper {
+			@include flex( $align:center, $justify:center );
+			min-height: 4.5rem;
+
+			@media screen and ( min-width:$breakpoint--md ) {
+				justify-content: flex-end;
+			}
+		}
+	}
+}
+
+// Wersja do druku
+@media print {
+	.footer {
+		display: none;
+	}
+}

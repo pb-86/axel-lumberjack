@@ -1,0 +1,25 @@
+{% include "templates/header.twig" %}
+
+<main class="main" id="main" tabindex="-1">
+	<div class="wrapper">
+
+		{% include 'template-parts/shared/title.twig' %}
+		{% include 'template-parts/shared/thumbnail.twig' %}
+		{% include 'template-parts/shared/content-full.twig' %}
+
+		<div class="post-meta post-meta--bottom">
+			{% include 'template-parts/shared/back-to-home.twig' %}
+			{% include 'template-parts/shared/print.twig' %}
+		</div>
+
+		{% if function( 'comments_open' ) or function( 'get_comments_number' ) %}
+			{% include 'templates/comments.twig' %}
+		{% endif %}
+		
+		{{ function( 'wp_link_pages' ) }}
+
+	</div>
+</main>
+
+{% include "templates/sidebar.twig" %}
+{% include "templates/footer.twig" %}

@@ -1,0 +1,28 @@
+<nav class="navbar navbar--header" aria-label="{{ __( 'Dolne menu', 'axel' ) }}">
+	<div class="wrapper">
+
+		{% if header_menu %}
+			<ul class="menu menu--header">
+				{% for item in header_menu.items %}
+					<li class="menu-item {% if item.children %}current-menu-item{% endif %} {% if item.children %}menu-item-has-children{% endif %}">
+						<a href="{{ item.link|e('esc_url') }}" {% if item.target == '_blank' %}target="{{ item.target }}" rel="noopener"{% endif %}>
+							{{ item.title|e('esc_html') }}
+						</a>
+						{% if item.children %}
+							<ul class="sub-menu">
+								{% for child in item.children %}
+									<li class="menu-item">
+										<a href="{{ child.link|e('esc_url') }}" {% if item.target == '_blank' %}target="{{ item.target }}" rel="noopener"{% endif %}>
+											{{ child.title|e('esc_html') }}
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		
+	</div>
+</nav>

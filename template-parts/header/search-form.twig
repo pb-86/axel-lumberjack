@@ -1,0 +1,18 @@
+<form class="searchform" method="get" action="{{ site.url }}">
+
+	{# Etykieta #}
+	<label class="screen-reader-text" for="search">
+		{{ __( 'Wyszukiwarka', 'axel' ) }}
+	</label>
+
+	{# Pole wyszukiwania #}
+	<input class="searchform__input" type="search" id="search" name="s" placeholder="{{ __( 'Wpisz wyszukiwaną frazę…', 'axel' ) }}">
+
+	{# Przycisk wyszukiwania #}
+	<button class="searchform__button button" type="submit">
+		<span class="searchform__button-text">
+			{{ __( 'Szukaj', 'axel' ) }}
+		</span>
+	</button>
+
+</form>

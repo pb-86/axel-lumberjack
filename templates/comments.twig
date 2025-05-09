@@ -1,0 +1,20 @@
+<div class="comments">
+	<div class="wrapper wrapper--small">
+
+		{{ function( 'comment_form' ) }}
+
+		<div class="comments__list">
+			{% for comment in post.comments %}
+				<article class="comment__item" id="comment-{{ comment.id }}">
+					<span class="comment__author">
+						{{ comment.author.name }}
+					</span>
+					{{ comment.content }}
+				</article>
+    	{% endfor %}
+		</div>
+
+		{{ function( 'the_comments_pagination' ) }}
+
+	</div>
+</div>

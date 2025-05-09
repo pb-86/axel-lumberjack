@@ -1,0 +1,25 @@
+{% if ( function( 'get_bloginfo', 'name' ) or function( 'get_bloginfo', 'description' ) ) %}
+	<div class="site-name">
+		
+		{% if ( function( 'get_bloginfo', 'name' ) ) %}
+			{% if ( function( 'is_home' ) or function( 'is_front_page' ) ) %}
+				<h1>
+					<a class="site-name__link" href="{{ site.url }}" rel="home">
+						{{  function( 'get_bloginfo', 'name' ) }}
+					</a>
+				</h1>
+			{% else %}
+				<a class="site-name__link" href="{{ site.url }}" rel="home">
+					{{  function( 'get_bloginfo', 'name' ) }}
+				</a>
+			{% endif %}
+		{% endif %}
+
+		{% if ( function( 'get_bloginfo', 'description' ) ) %}
+			<div class="site-name__description">
+				{{ function( 'get_bloginfo', 'description' ) }}
+			</div>
+		{% endif %}
+
+	</div>
+{% endif %}

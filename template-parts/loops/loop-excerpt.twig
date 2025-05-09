@@ -1,0 +1,18 @@
+{% if posts is not empty %}
+	
+	<div class="excerpts">
+
+		{% for post in posts %}
+			{% if function( 'is_search' ) %}
+				{% include 'template-parts/excerpts/excerpt-search.twig' %}
+			{% else %}
+				{% include 'template-parts/excerpts/excerpt-default.twig' %}
+			{% endif %}
+		{% endfor %}
+
+	</div>
+
+	{% include 'template-parts/loops/pagination.twig' %}
+{% else %}
+	{% include 'template-parts/excerpts/no-posts.twig' %}
+{% endif %}

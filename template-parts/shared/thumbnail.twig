@@ -1,0 +1,23 @@
+{% if function( 'has_post_thumbnail' ) %}
+
+	<figure class="thumbnail">
+
+		{% if function( 'is_singular' ) %}
+			<img class="thumbnail__image" src="{{ post.thumbnail.src( 'axel-singular-thumbnail' )|e( 'esc_url' ) }}" width="1120" height="624" alt="" loading="lazy">
+		{% else %}
+			<a class="thumbnail__link" href="{{ post.link|e( 'esc_url' ) }}" tabindex="-1" aria-hidden="true">
+				<img class="thumbnail__image" src="{{ post.thumbnail.src( 'axel-excerpt-thumbnail' )|e( 'esc_url' ) }}" width="528" height="288" alt="" loading="lazy">
+			</a>
+		{% endif %}
+
+		{% if function( 'is_singular' ) or function( 'get_the_post_thumbnail_caption' ) %}
+			<figcaption class="thumbnail__caption">
+				{{ post.thumbnail.caption|e( 'esc_html' ) }}
+			</figcaption>
+		{% endif %}
+
+	</figure>
+
+{% else %}
+	<div class="placeholder"></div>
+{% endif %}

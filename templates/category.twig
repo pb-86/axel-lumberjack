@@ -1,0 +1,16 @@
+{% include "templates/header.twig" %}
+
+<main class="main" id="main" tabindex="-1">
+	<div class="wrapper">
+
+		{# Tytuł kategorii #}
+		{% include "template-parts/shared/title.twig" %}
+
+		{# Lista wpisów #}
+		{% include "template-parts/loops/loop-excerpt.twig" %}
+
+	</div>
+</main>
+
+{% include "templates/sidebar.twig" %}
+{% include "templates/footer.twig" %}

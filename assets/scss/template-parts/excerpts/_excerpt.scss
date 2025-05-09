@@ -1,0 +1,15 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.excerpt {
+	flex-basis: 100%;
+	max-width: 33rem;
+
+	&__meta {
+		@include flex( $direction:column, $align:flex-start, $justify:center );
+
+		@media screen and ( min-width:$breakpoint--sm ) {
+			@include flex( $direction:row, $align:center, $justify:flex-start, $gap:0.75rem );
+		}
+	}
+}

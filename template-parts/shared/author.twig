@@ -1,0 +1,6 @@
+<a class="post-author" href="{{ post.author.link|e( 'esc_url' ) }}">
+	<span class="screen-reader-text">
+		{{ __( 'Zobacz inne wpisy autora', 'axel' ) }}
+	</span>
+	{{ post.author.name|e( 'esc_html' ) }}
+</a>

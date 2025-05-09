@@ -1,0 +1,37 @@
+{% include "templates/header.twig" %}
+
+<main class="main" id="main" tabindex="-1">
+	<div class="wrapper">
+
+		{% include 'template-parts/shared/title.twig' %}
+
+		{# Bio #}
+		<div class="author-bio">
+			{{ current_author.meta('description') }}
+		</div>
+
+		{% include "template-parts/loops/loop-excerpt.twig" %}
+
+		{# Lista pozostałych autorów #}
+		{% if other_authors %}
+			<div class="other-authors">
+				<h2>
+					{{ __( 'Sprawdź innych autorów', 'axel' ) }}
+				</h2>
+				<ul>
+					{% for author in other_authors %}
+						<li>
+							<a href="{{ author.link }}">
+								{{ author.display_name }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+
+	</div>
+</main>
+
+{% include "templates/sidebar.twig" %}
+{% include "templates/footer.twig" %}

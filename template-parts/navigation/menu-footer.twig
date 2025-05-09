@@ -1,0 +1,30 @@
+<nav class="navbar navbar--footer" aria-label="{{ __( 'Dolne menu', 'axel' ) }}">
+	<div class="wrapper">
+
+		{% if footer_menu %}
+			<ul class="menu menu--footer">
+				{% for item in footer_menu.items %}
+					<li class="menu-item {% if item.current %}current-menu-item{% endif %}">
+						<a href="{{ item.link|e( 'esc_url' ) }}" {% if item.target == '_blank' %}target="{{ item.target }}" rel="noopener"{% endif %}>
+							{{ item.title|e( 'esc_html' ) }}
+						</a>
+						{% if item.children %}
+							<ul class="sub-menu">
+								{% for child in item.children %}
+									<li class="menu-item {% if item.current %}current-menu-item{% endif %}">
+										<a href="{{ child.link|e( 'esc_url' ) }}" {% if item.target == '_blank' %}target="{{ item.target }}" rel="noopener"{% endif %}>
+											{{ child.title|e( 'esc_html' ) }}
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		{% include 'template-parts/navigation/scroll-to-top.twig' %}
+	
+	</div>
+</nav>
